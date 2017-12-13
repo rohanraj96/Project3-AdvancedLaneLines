@@ -60,17 +60,17 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 1. Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![alt text][image2]
+[Road Transformed](./report_imgs/transformed.png)
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
 I used a combination of color and gradient thresholds to generate a binary image (5th code cell of the IPython notebook "script.ipynb"). I also used morphological transformations and blurring to get better results. Here's an example of my output for this step. 
 
-![alt text][image3]
+[Binary example](./report_imgs/combined.png)
 
 I used the OpenCV function cv2.dilate to get better results as shown in the following figure.
 
-![alt text][image7]
+[Reinforced Binary](./report_imgs/reinforced.png)
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -83,17 +83,17 @@ dest_pts = np.array([[350, 720], [350, 0], [970, 0], [970, 720]], np.float32)
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![alt text][image4]
+[Warp Example](./report_imgs/warped_straight_lines.png)
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 Then I applied an ROI mask to the image to eliminate clutter in the image and made a histogram like so:
 
-![alt text][image8]
+[Histogram](./report_imgs/histogram.png)
 
 And fit my lane lines with a 2nd order polynomial kinda like this:
 
-![alt text][image5]
+[Fit Visual](./report_imgs/fitting.png)
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -103,7 +103,7 @@ I did this in a seperate function called `util()` which is in the 8th code cell 
 
 I implemented this step in the 13th code cell of my IPython notebook by calling the `pipeline()` function which returns the output image.
 
-![alt text][image6]
+[Output](./report_imgs/example_output.png)
 
 ---
 
@@ -125,7 +125,7 @@ Next step was experimenting with different kind of thresholding and their values
 
 I chose the HLS color scheme to get optimum results and derivative thresholding as well
 
-![alt text][image9]
+[HLS seperate channels](./report_imgs/channels.png)
 
 For derivative thresholding I downscaled the magnitude of y because that introduces noise in the image. This can be seen in the 52nd line of the 9th code cell of my other IPython notebook "jai_shree_ram.ipynb".
 Then I used morphological transformations to get the best possible results.
