@@ -53,7 +53,7 @@ Image 1 = (9, 5)
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
-![alt text][image1]
+[Undistorted](./report_imgs/undistort_output.png)
 
 ### Pipeline (single images)
 
