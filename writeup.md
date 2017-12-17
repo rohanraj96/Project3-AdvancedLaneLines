@@ -68,7 +68,7 @@ I used a combination of color and gradient thresholds to generate a binary image
 
 [Binary example](./report_imgs/combined.png)
 
-I used the OpenCV function cv2.dilate to get better results as shown in the following figure.
+I used the OpenCV function cv2.dilate() to get better results as shown in the following figure.
 
 [Reinforced Binary](./report_imgs/reinforced.png)
 
@@ -87,7 +87,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I applied an ROI mask to the image to eliminate clutter in the image and made a histogram like so:
+Then I made a histogram like so:
 
 [Histogram](./report_imgs/histogram.png)
 
@@ -111,7 +111,7 @@ I implemented this step in the 13th code cell of my IPython notebook by calling 
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./result.mp4)
+Here's a [link to my video result](./submission.mp4)
 
 ---
 
@@ -123,7 +123,7 @@ My first step was rectifying the error with camera calibration as not all the im
 Next step was experimenting with different kind of thresholding and their values to get the best possible result. 
 
 
-I chose the HLS color scheme to get optimum results and derivative thresholding as well
+I chose the HSV and RGB color scheme to get optimum results and derivative thresholding as well
 
 [HLS seperate channels](./report_imgs/channels.png)
 
